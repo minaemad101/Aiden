@@ -1,7 +1,7 @@
 import spotipy
 import os
 import dotenv
-import speech_recognition as sr
+import time
 import orjson
 import random
 from spotipy.oauth2 import SpotifyOAuth
@@ -15,6 +15,7 @@ pathlib.PosixPath = pathlib.WindowsPath
 from src.nlp import *
 import pyaudio
 import wave
+
 
 
 
@@ -38,7 +39,6 @@ audio_p = pyaudio.PyAudio()
 
 
 def callback(in_data, frame_count, time_info, status):    
-    print("here we go")
     wf = wave.open("output.wav", "wb")
     wf.setnchannels(CHANNELS)
     wf.setsampwidth(audio_p.get_sample_size(FORMAT))
@@ -134,17 +134,17 @@ def default_processing(words):
                 print(f"[italic red]Could not find {name}. Try again.[/italic red]")
 old_command = ''
 while True:
-    r = sr.Recognizer()
     start_time = time.time()
     command, audio = initialize_voice()
     command = command.lower()
+    
     if(command==old_command):
         command = ''
     old_command = command
 
-    print("command here: ", command)
-    print("old command here: ", old_command)
-    print("wait a second")
+    # print("command here: ", command)
+    # print("old command here: ", old_command)
+    # print("wait a second")
     while time.time() - start_time < 10:
         time.sleep(0.1)
     print(f"[medium_purple3]{command}[/medium_purple3]")
