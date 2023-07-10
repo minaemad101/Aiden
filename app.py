@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request, url_for, flash, redirect
 from threading import Thread
 from text import *
-from voice import *
-from hand import *
-from hand_2 import *
+# from voice import *
+# from hand import *
+# from hand_2 import *
 import multiprocessing
 
 
@@ -14,13 +14,13 @@ h = None
 
 
 def voice_thread():
-    # text("play blank space by taylor swift")
-    voice()
+    text("play blank space by taylor swift")
+    # voice()
 
 
 def hand_thread():
-    # text("play blank space by taylor swift")
-    hand_2()
+    text("play blank space by taylor swift")
+    # hand_2()
 
 
 def end_threads():
