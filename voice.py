@@ -144,7 +144,7 @@ def voice():
         if(command==old_command):
             command = ''
         old_command = command
-        while time.time() - start_time < 10:
+        while time.time() - start_time < 5:
             time.sleep(0.1)
         print(f"[medium_purple3]{command}[/medium_purple3]")
         words = command.split()

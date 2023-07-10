@@ -20,7 +20,7 @@ def voice_thread():
 
 def hand_thread():
     # text("play blank space by taylor swift")
-    hand_2()
+    hand()
 
 
 def end_threads():

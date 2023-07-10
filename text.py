@@ -1,4 +1,3 @@
-from src.nlp import *
 import spotipy
 import os
 import dotenv
@@ -11,7 +10,7 @@ import asyncio
 import pathlib
 temp = pathlib.PosixPath
 pathlib.PosixPath = pathlib.WindowsPath
-
+from src.nlp import *
 
 dotenv.load_dotenv()
 

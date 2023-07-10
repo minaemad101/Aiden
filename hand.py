@@ -232,11 +232,11 @@ def hand():
                         if count==10 and i==2:
 
 
-                            # current_volume = sp.current_playback()['device']['volume_percent']
-                            # new_volume = min(current_volume + 10, 100)
+                            current_volume = sp.current_playback()['device']['volume_percent']
+                            new_volume = min(current_volume + 10, 100)
 
 
-                            asyncio.run(change_volume(spotify=sp, volume=100))
+                            asyncio.run(change_volume(spotify=sp, volume=new_volume))
                             count=0
                             temp=True
                             print('Song is vol up playing.')
@@ -251,10 +251,10 @@ def hand():
                     elif user_input == 3:
 
                         if count==10 and i==3:
-                            # current_volume = sp.current_playback()['device']['volume_percent']
-                            # new_volume = max(current_volume - 10, 0)
+                            current_volume = sp.current_playback()['device']['volume_percent']
+                            new_volume = max(current_volume - 10, 0)
 
-                            asyncio.run(change_volume(spotify=sp, volume=50))
+                            asyncio.run(change_volume(spotify=sp, volume=new_volume))
                             count=0
                             temp=True
                             print('Song is vol down playing.')
