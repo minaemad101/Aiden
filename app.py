@@ -4,6 +4,7 @@ from text import *
 import time
 from voice import *
 from hand import *
+from hand_2 import *
 # import voice here
 
 
@@ -12,16 +13,10 @@ app.config['SECRET_KEY'] = 'df0331cefc6c2b9a5d0208a726a5d1c0fd37324feba25506'
 
 
 def voice_thread():
-    # call voice function here
-    # text("play blank space by taylor swift")
-    # time.sleep(2.4)
-    # text("play amira by wegz")
-    # time.sleep(2.4)
-    # text("play anything by amr diab")
     voice()
 
 def hand_thread():
-    hand()
+    hand_2()
 
 @app.route('/')
 def index():
