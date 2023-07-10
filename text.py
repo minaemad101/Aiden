@@ -1,3 +1,4 @@
+from src.nlp import *
 import spotipy
 import os
 import dotenv
@@ -10,8 +11,6 @@ import asyncio
 import pathlib
 temp = pathlib.PosixPath
 pathlib.PosixPath = pathlib.WindowsPath
-from src.nlp import *
-
 
 
 dotenv.load_dotenv()
@@ -127,23 +126,6 @@ def text(command):
     if len(words) < 1:
         print(f"[italic red]Could not understand.[/italic red]")
         return
-    elif len(words) == 1:
-        if words[0] == "next":
-            asyncio.run(next_track(spotify=sp))
-        elif words[0] == "pause":
-            asyncio.run(pause_track(spotify=sp))
-        elif words[0] == "resume":
-            asyncio.run(resume_track(spotify=sp))
-        elif words[0] == 'back':
-            asyncio.run(play_previous_song(spotify=sp))
-        elif words[0] == "quit":
-            asyncio.run(exit_application())
-            return
-        elif words[0] == "repeat":
-            asyncio.run(repeat_track(spotify=sp))
-        else:
-            print(f"[italic red]Command not recognized.[/italic red]")
-            return
     elif "next" in words:
         asyncio.run(next_track(spotify=sp))
     elif "pause" in words:
